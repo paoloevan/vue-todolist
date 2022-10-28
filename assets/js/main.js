@@ -36,11 +36,11 @@ createApp({
                 this.short = true;
             } else {
                 this.short=false;
-                this.a = {
+                const newItem = {
                     text: this.newTodo,
                     done: false
                 }
-                this.toDo.unshift(this.a);
+                this.toDo.unshift(newItem);
                 this.newTodo = '';
             }
         }
