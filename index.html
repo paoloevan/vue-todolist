@@ -21,8 +21,9 @@
                 <input @keyup.enter="addTodo" v-model="newTodo" class="me-1" type="text">
                 <button @click="addTodo">Aggiungi</button>
             </div>
+
             <ul class="py-3">
-                <li v-for="(text, i) in toDo" :class="toDo[i].done ? 'done' : ''">
+                <li @click="toDo[i].done = !toDo[i].done" v-for="(text, i) in toDo" :class="toDo[i].done ? 'done' : ''">
                     {{toDo[i].text}}
                     <i @click="removeItem(i)" class="fa-solid fa-circle-xmark ms-2"></i>
                 </li>
