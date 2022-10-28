@@ -1,10 +1,11 @@
 
-const {createApp} = Vue;
+const { createApp } = Vue;
 
 createApp({
-    data(){
-        return{
+    data() {
+        return {
             newTodo: '',
+            short: false,
             toDo: [
                 {
                     text: 'fare la spesa',
@@ -25,18 +26,23 @@ createApp({
             ]
         }
     },
-    methods:{
-        removeItem(i){
+    methods: {
+        removeItem(i) {
             console.log('click');
             this.toDo.splice(i, 1);
         },
-        addTodo(){
-            this.a = {
-                text: this.newTodo,
-                done: false
+        addTodo() {
+            if (this.newTodo.length < 1) {
+                this.short = true;
+            } else {
+                this.short=false;
+                this.a = {
+                    text: this.newTodo,
+                    done: false
+                }
+                this.toDo.unshift(this.a);
+                this.newTodo = '';
             }
-            this.toDo.unshift(this.a);
-            this.newTodo = '';
         }
     }
 }).mount('#app');

@@ -6,3 +6,7 @@
 li{
     cursor: pointer;
 }
+span{
+    color: red;
+    font-weight: bold;
+}
