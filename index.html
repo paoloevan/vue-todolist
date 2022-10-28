@@ -18,7 +18,7 @@
         <div class="container p-5">
             <h1>ToDo List</h1>
             <div class="form p-3">
-                <input v-model="newTodo" class="me-1" type="text">
+                <input @keyup.enter="addTodo" v-model="newTodo" class="me-1" type="text">
                 <button @click="addTodo">Aggiungi</button>
             </div>
             <ul class="py-3">
