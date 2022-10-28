@@ -1,7 +1,4 @@
 /**
-MILESTONE 2
-Visualizzare a fianco ad ogni item ha una "x":
-cliccando su di essa, il todo viene rimosso dalla lista.
 
 MILESTONE 3
 Predisporre un campo di input testuale e un pulsante "aggiungi":
@@ -25,7 +22,7 @@ createApp({
                 },
                 {
                     text: 'completare esercizio',
-                    done: false
+                    done: true
                 },
                 {
                     text: 'pulire casa',
@@ -36,6 +33,12 @@ createApp({
                     done: false
                 }
             ]
+        }
+    },
+    methods:{
+        removeItem(i){
+            console.log('click');
+            this.toDo.splice(i, 1)
         }
     }
 }).mount('#app')
